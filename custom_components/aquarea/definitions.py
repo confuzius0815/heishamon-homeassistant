@@ -976,6 +976,16 @@ def build_switches(mqtt_prefix: str) -> list[HeishaMonSwitchEntityDescription]:
             state=bit_to_bool,
             entity_registry_enabled_default=False,
         ),
+        HeishaMonSwitchEntityDescription( 
+            heishamon_topic_id="SetCompressorState", # depends on SET32 TOP122
+            key=f"{mqtt_prefix}commands/SetCompressorState",
+            command_topic=f"{mqtt_prefix}commands/SetCompressorState",
+            name="Aquarea Set Compressor state",
+            retain=True,
+            entity_category=EntityCategory.CONFIG,
+            state=bit_to_bool,
+            entity_registry_enabled_default=True,
+        ),
         HeishaMonSwitchEntityDescription(
             heishamon_topic_id="SET33",  # corresponds to TOP120
             key=f"{mqtt_prefix}main/External_Heat_Cool_Control",
