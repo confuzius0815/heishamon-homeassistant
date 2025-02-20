@@ -984,7 +984,7 @@ def build_switches(mqtt_prefix: str) -> list[HeishaMonSwitchEntityDescription]:
             retain=True,
             entity_category=EntityCategory.CONFIG,
             state=bit_to_bool,
-            entity_registry_enabled_default=True,
+            entity_registry_enabled_default=False,
         ),
         HeishaMonSwitchEntityDescription(
             heishamon_topic_id="SET33",  # corresponds to TOP120
